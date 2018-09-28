@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.shopping</groupId>
-  <artifactId>Shopping</artifactId>
+  <artifactId>shopping</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>Shopping Maven Webapp</name>
+  <name>shopping Maven Webapp</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -127,7 +127,7 @@
   </dependencies>
 
   <build>
-    <finalName>Shopping</finalName>
+    <finalName>shopping</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
