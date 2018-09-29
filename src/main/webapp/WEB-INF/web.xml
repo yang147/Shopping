@@ -15,6 +15,10 @@
       <param-name>encoding</param-name>
       <param-value>UTF-8</param-value>
     </init-param>
+    <init-param>
+      <param-name>forceEncoding</param-name>
+      <param-value>true</param-value>
+    </init-param>
   </filter>
   <filter-mapping>
     <filter-name>encodingFilter</filter-name>
@@ -23,7 +27,7 @@
 
   <!-- 配置DispatcherServlet -->
   <servlet>
-    <servlet-name>SpringMVC</servlet-name>
+    <servlet-name>shopping</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <!-- 配置springMVC需要加载的配置文件-->
     <init-param>
@@ -34,11 +38,17 @@
     <async-supported>true</async-supported>
   </servlet>
   <servlet-mapping>
-    <servlet-name>SpringMVC</servlet-name>
+    <servlet-name>shopping</servlet-name>
     <!-- 匹配所有请求，此处也可以配置成 *.do 形式 -->
     <url-pattern>/</url-pattern>
   </servlet-mapping>
 
+<!--  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.js</url-pattern>
+    <url-pattern>*.css</url-pattern>
+    <url-pattern>/images/*</url-pattern>
+  </servlet-mapping>-->
   <welcome-file-list>
     <welcome-file>login.jsp</welcome-file>
   </welcome-file-list>

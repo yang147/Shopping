@@ -20,7 +20,7 @@ public class UserController {
     @Resource
     private IUserService userService;
 
-    @RequestMapping(value="/showUser.do",method=RequestMethod.POST)
+    @RequestMapping(value="/showUser",method=RequestMethod.POST)
     public String selectUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
@@ -30,10 +30,10 @@ public class UserController {
         ObjectMapper mapper = new ObjectMapper();
         response.getWriter().write(mapper.writeValueAsString(user));
         response.getWriter().close();
-        return "test.jsp";
+        return "test2.jsp";
     }
 
-    @RequestMapping(value="/checkUser.do",method=RequestMethod.POST)
+    @RequestMapping(value="/checkUser",method=RequestMethod.POST)
     public void checkUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
