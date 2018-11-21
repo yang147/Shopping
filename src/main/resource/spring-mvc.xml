@@ -26,4 +26,21 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <!-- 支持上传下载文件 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" >
+        <property name="maxInMemorySize" value="40960"></property>
+        <property name="maxUploadSize" value="104857600"></property>
+        <property name="defaultEncoding" value="utf-8"></property>
+    </bean>
+
+    <!-- 该异常是SpringMVC在检查上传的文件信息时抛出来的，而且此时还没有进入到Controller方法中 -->
+    <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <!-- 遇到MaxUploadSizeExceededException异常时，自动跳转到WebContent目录下的error.jsp页面 -->
+                <prop key="org.springframework.web.multipart.MaxUploadSizeExceededException">error</prop>
+            </props>
+        </property>
+    </bean>
+
 </beans>
