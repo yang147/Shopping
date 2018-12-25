@@ -11,7 +11,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
-<form action="file/upLoadFile" method="post" enctype="multipart/form-data">
+<form action="file/uploadFile" method="post" enctype="multipart/form-data">
     选择文件：<input type="file" name="file"/>
     <input type="submit" value="提交"/>
 </form>
