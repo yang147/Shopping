@@ -28,7 +28,7 @@ public class GoodsServiceImpl implements GoodsService {
     @Override
     public List<Goods> getTurnPicture() {
         List<Goods> goodsList = new ArrayList<>();
-        goodsList = goodsDao.selectGoods(1);
+        goodsList = goodsDao.selectGoodsByType(1);
         return goodsList;
     }
 
@@ -38,6 +38,15 @@ public class GoodsServiceImpl implements GoodsService {
      */
     @Override
     public List<Goods> getNewPicture() {
-        return null;
+        List<Goods> goodsList = new ArrayList<>();
+        goodsList = goodsDao.selectGoodsByType(0);
+        return goodsList;
+    }
+
+    @Override
+    public Goods getGoodsDetail(Integer Id) {
+        Goods goods = new Goods();
+        goods = goodsDao.selectGoodsById(Id);
+        return goods;
     }
 }

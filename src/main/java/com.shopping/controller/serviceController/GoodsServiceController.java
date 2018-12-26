@@ -19,7 +19,7 @@ import java.util.List;
  * Time:1:01
  */
 @Controller
-@RequestMapping("/fileservice")
+@RequestMapping("/goodsservice")
 public class GoodsServiceController {
 
     @Autowired
@@ -35,6 +35,30 @@ public class GoodsServiceController {
         List<Goods> goodsList = new ArrayList<>();
         goodsList = goodsService.getTurnPicture();
         return goodsList;
+    }
+
+    /**
+     * 获取最近上新产品
+     * @return
+     */
+    @RequestMapping(value="/getNewPicture",method=RequestMethod.GET)
+    @ResponseBody
+    public List<Goods> getNewPicture(){
+        List<Goods> goodsList = new ArrayList<>();
+        goodsList = goodsService.getNewPicture();
+        return goodsList;
+    }
+
+    /**
+     * 根据ID获取详情
+     * @return
+     */
+    @RequestMapping(value="/getGoodsDetail",method=RequestMethod.POST)
+    @ResponseBody
+    public Goods getGoodsDetail(Integer Id){
+        Goods goods =new Goods();
+        goods = goodsService.getGoodsDetail(Id);
+        return goods;
     }
 
 }

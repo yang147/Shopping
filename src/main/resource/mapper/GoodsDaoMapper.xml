@@ -4,8 +4,12 @@
 <!-- 设置为IUserDao接口方法提供sql语句配置 -->
 <mapper namespace="com.shopping.dao.IGoodsDao">
 
-    <select id="selectGoods" resultType="Goods" parameterType="Integer">
+    <select id="selectGoodsByType" resultType="Goods" parameterType="Integer">
         SELECT * FROM goods WHERE type = #{type}
+    </select>
+
+    <select id="selectGoodsById" resultType="Goods" parameterType="Integer">
+        SELECT * FROM goods WHERE id = #{Id}
     </select>
 
 </mapper>

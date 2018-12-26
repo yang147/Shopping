@@ -13,9 +13,11 @@ import java.util.List;
 public interface GoodsService {
 
 
-    public List<Goods> getTurnPicture();
+    List<Goods> getTurnPicture();
 
-    public List<Goods> getNewPicture();
+    List<Goods> getNewPicture();
+
+    Goods getGoodsDetail(Integer Id);
 
 
 

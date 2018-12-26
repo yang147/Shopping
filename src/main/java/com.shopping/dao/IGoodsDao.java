@@ -12,7 +12,9 @@ import java.util.List;
  */
 public interface IGoodsDao {
 
-    List<Goods> selectGoods(Integer type);
+    List<Goods> selectGoodsByType(Integer type);
+
+    Goods selectGoodsById(Integer Id);
 
 
 
